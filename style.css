@@ -1,0 +1,160 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+@theme{
+    --display-sm:412px;
+    --display-md:768px;
+    --display-lg:1024px;
+}
+
+
+/*  1. Global Styles & Variables */
+/* ------------------- */
+:root {
+  --bg-dark: #1f1f1f;
+  --bg-dark-grey: #2a2a2a;
+  --bg-grey: #363636;
+  --text-light: #f5f5f5; /* Slightly softer white */
+  --text-mid: #9e9e9e;
+  --pink: #e84949;
+
+  /* NEW: Added for consistency */
+  --border-radius-md: 12px;
+  --transition-speed: 0.4s;
+  --width:80%;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    padding-top: 2em;
+}
+
+nav{
+    display: flex;
+    width: var(--width);
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+
+.left-nav-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.left-nav-section img{
+    border-radius: 1em;
+}
+
+.left-nav-section h2{
+    color: var( --text-light);
+}
+
+.right-nav-section{
+    display: flex;
+    gap: 2em;
+}
+
+.right-nav-section a{
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 800;
+    transition: all var(--transition-speed) ease-in-out ;
+    position: relative;
+}
+
+.right-nav-section a::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    transform: scaleX(0);
+    background-color: var(--pink);
+    left: 0;
+    bottom: -8px;
+    transition: all var(--transition-speed) ease;
+    transform-origin: center;
+}
+
+.right-nav-section a:hover::after{
+    transform: scaleX(1)    ;   
+}
+
+
+.hero-section{
+    display: flex;
+    width: var(--width);
+    margin: auto;
+    padding-top: 3em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-hero-section{
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 50%;
+}
+
+.left-hero-section h2{
+    font-size: 3em;
+}
+
+.left-hero-section p{
+    width: 60%;
+    color: var(--text-mid);
+}
+
+.btn{
+    width: 20%;
+    padding: 1em;
+    background-color: var(--pink);
+    color: var(--text-light);
+    font-size: 1em;
+    border: none;
+    border-radius: 1em;
+    font-weight: bolder;
+}
+
+/* .right-hero-section{
+} */
+
+.mainImage{
+    padding: 2em;
+    height: 450px;
+    width: 400px;
+    animation: scaleAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes scaleAnimation {
+    0%{
+        transform: scale(1);
+        filter: grayscale(1);
+    }
+    50%{
+        
+        transform: scale(1.1);
+        box-shadow: 2px 3px 10px black  ;
+        filter: grayscale(0);
+    }
+    100%{
+        
+        transform: scale(1);
+        filter: grayscale(1);
+    }
+}
+
